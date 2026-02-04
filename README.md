@@ -49,6 +49,12 @@ Just run the query
 
 # Running the demo in Webstorm
 
+## Design Artifacts
+This project includes high-fidelity UI/UX prototypes created in Figma to design user flows, preference input, and recommendation transparency.
+
+Selected screens are available in `assets/figma/`.  
+Full interactive prototype available upon request.
+
 Incase there is an error dotenv not found
 in terminal run " npm install dotenv "
 
