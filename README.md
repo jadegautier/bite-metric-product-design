@@ -1,43 +1,58 @@
-# Bite Metric — Product & UX Design
+# Bitemetric Demo 
 
-Bite Metric is a data-driven web application designed to help groups of friends decide where to eat by aggregating individual preferences into transparent, ranked recommendations.
+Search for restaurants based on cuisine, budget and area choices of all your friends
 
-This project focuses on **product thinking, UX design, and decision-support logic**, with an emphasis on usability, clarity, and explainable scoring.
+Using Postgres as the backend for API. 
 
-## Problem
-Group dining decisions are often inefficient and frustrating due to:
-- Conflicting preferences
-- Lack of transparency in recommendations
-- Decision fatigue when comparing many options
+# Instructions 
 
-## Solution
-Bite Metric enables users to:
-- Input individual dining preferences
-- Apply constraints (dietary needs, price range, location)
-- View ranked restaurant recommendations based on a clear “Fit Score”
+Database csv file is in the folder
+Add database manually to PGadmin4
+.env file contains the PGadmin4 server details
 
-The interface was designed to make the recommendation logic understandable and trustworthy.
+Create database bitemetric 
 
-## Product & UX Design
-- Designed end-to-end user flows from onboarding to final recommendation
-- Created wireframes and high-fidelity UI in Figma
-- Emphasized information hierarchy, scannability, and accessibility
-- Designed visual explanations for scoring and ranking logic
+in the database create 2 tables (restaurants) and log file (search_logs) in pgadmin4 using the code mentioned below
 
-## Data & Logic
-- Preference aggregation across multiple users
-- Scoring system to rank restaurants
-- Transparent breakdown of how recommendations are generated
+Make sure the server and database matches as mentioned in .env file
 
-## Tools
-- Figma (UI/UX design & prototyping)
-- Product requirement definition
-- Collaborative design with backend & database teammates
-  
-## Files
-This repository includes:
-- Product design assets
-- UX flows and screens
-- Supporting documentation and presentation materials
+Run the demo in terminal in webstorm 
 
-📄 Final presentation included in this repository.
+# For creating table restaurants in PGadmin4
+
+CREATE TABLE IF NOT EXISTS restaurants (
+name        TEXT NOT NULL,
+cuisine     TEXT NOT NULL,
+area        TEXT NOT NULL,
+price_level INTEGER NOT NULL CHECK (price_level BETWEEN 1 AND 4),
+rating      NUMERIC,
+address     TEXT,
+url         TEXT,
+photo_url   TEXT
+);
+
+After running query - import the data
+
+# For creating the table log records in PGadmin4
+
+CREATE TABLE search_logs (
+name TEXT NOT NULL,
+email TEXT NOT NULL,
+cuisine TEXT NOT NULL,
+area TEXT NOT NULL,
+budget INTEGER NOT NULL,
+top_fit_score NUMERIC,
+created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+Just run the query
+
+# Running the demo in Webstorm
+
+Incase there is an error dotenv not found
+in terminal run " npm install dotenv "
+
+
+In your webstorm open the project 
+
+and in terminal run " npm start "

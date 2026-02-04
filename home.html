@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BiteMetic-Home</title>
+    <link rel="stylesheet" href="assets/css/stylesheet.css"/>
+</head>
+<body>
+<!--header data-->
+<header class="site-header">
+    <div class="brand">
+        <img src="/assets/images/bitemetric short.png" alt="BiteMetric" class="logo">
+        <h1>BiteMetric</h1>
+    </div>
+    <nav>
+        <a href="/home.html">HOME</a>
+        <a href="/about.html">ABOUT US</a>
+        <a href="/home.html">FIT SCORE</a>
+        <a href="/explore.html">EXPLORE</a>
+        <a href="/contact.html">CONTACT US</a>
+    </nav>
+</header>
+
+<main class="three-grid">
+<!--    left photo-->
+    <figure class="grid-photo">
+        <img src="/assets/images/rest1.jpg" alt="Restaurant interior">
+    </figure>
+
+<!--    Center data-->
+    <section class="grid-form">
+        <h2>Find Your Restaurant</h2>
+
+        <form class="finder-form" action="#" method="post">
+            <label for="name">Name :</label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="email">Email :</label>
+            <input id="email" name="email" type="email" required>
+
+            <label for="cuisine">Cuisine :</label>
+            <select id="cuisine" name="cuisine" required>
+                <option value="African">African</option>
+                <option value="American">American</option>
+                <option value="Asian">Asian</option>
+                <option value="Bangladeshi">Bangladeshi</option>
+                <option value="Brazilian">Brazilian</option>
+                <option value="Caribbean">Caribbean</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Colombian">Colombian</option>
+                <option value="Cuban">Cuban</option>
+                <option value="Dominican">Dominican</option>
+                <option value="Ecuadorian">Ecuadorian</option>
+                <option value="Ethiopian">Ethiopian</option>
+                <option value="European">European</option>
+                <option value="Fast Food">Fast Food</option>
+                <option value="French">French</option>
+                <option value="Georgian">Georgian</option>
+                <option value="Greek">Greek</option>
+                <option value="Haitian">Haitian</option>
+                <option value="Indian">Indian</option>
+                <option value="Irish">Irish</option>
+                <option value="Italian">Italian</option>
+                <option value="Jamaican">Jamaican</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Jewish">Jewish</option>
+                <option value="Korean">Korean</option>
+                <option value="Kosher">Kosher</option>
+                <option value="Latin">Latin</option>
+                <option value="Lebanese">Lebanese</option>
+                <option value="Malaysian">Malaysian</option>
+                <option value="Mediterranean">Mediterranean</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Paraguayan">Paraguayan</option>
+                <option value="Peruvian">Peruvian</option>
+                <option value="Polish">Polish</option>
+                <option value="Puerto Rican">Puerto Rican</option>
+                <option value="Pizzeria">Pizzeria</option>
+                <option value="Russian">Russian</option>
+                <option value="Salvadoran">Salvadoran</option>
+                <option value="Seafood">Seafood</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Sri Lankan">Sri Lankan</option>
+                <option value="Syrian">Syrian</option>
+                <option value="Thai">Thai</option>
+                <option value="Tibetan">Tibetan</option>
+                <option value="Turkish">Turkish</option>
+                <option value="Ukrainian">Ukrainian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Vietnamese">Vietnamese</option>
+                <option value="Yemeni">Yemeni</option>
+            </select>
+
+            <label for="area">Area :</label>
+            <select id="area" name="area" required>
+                <option value="">-- Select Area --</option>
+                <option value="Midtown">Midtown</option>
+                <option value="SoHo">SoHo</option>
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="Chelsea">Chelsea</option>
+                <option value="Lower East Side">Lower East Side</option>
+                <option value="Harlem">Harlem</option>
+                <option value="Upper West Side">Upper West Side</option>
+                <option value="Bronx">Bronx</option>
+                <option value="Corona">Corona</option>
+                <option value="Elmhurst">Elmhurst</option>
+                <option value="New York">New York</option>
+                <option value="Queens">Queens</option>
+                <option value="Rego Park">Rego Park</option>
+                <option value="Ridgewood">Ridgewood</option>
+                <option value="Staten Island">Staten Island</option>
+            </select>
+
+            <fieldset class="budget">
+                <legend>Budget :</legend>
+                <div class="options">
+                <label><input type="radio" name="budget" value="1"> $</label>
+                <label><input type="radio" name="budget" value="2"> $$</label>
+                <label><input type="radio" name="budget" value="3"> $$$</label>
+                <label><input type="radio" name="budget" value="4"> $$$$</label>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="btn primary">Find Restaurant</button>
+                <button type="button" class="btn ghost">Add a Friend</button>
+            </div>
+        </form>
+        <!-- STEP 2: fit-score breakdown (hidden until submit) -->
+        <section id="fit-breakdown" class="breakdown" hidden>
+            <h2>YOUR FIT SCORE</h2>
+            <div class="friend-pill" id="friends-pill" hidden></div>
+
+            <div class="meter">
+                <span class="label">Cuisine Match :</span>
+                <div class="bar"><div class="fill" id="bar-cuisine" style="width:0%"></div></div>
+            </div>
+
+            <div class="meter">
+                <span class="label">Area Match :</span>
+                <div class="bar"><div class="fill" id="bar-area" style="width:0%"></div></div>
+            </div>
+
+            <div class="meter">
+                <span class="label">Price Match :</span>
+                <div class="bar"><div class="fill" id="bar-price" style="width:0%"></div></div>
+            </div>
+        </section>
+
+        <!-- STEP 3: results list -->
+        <section id="results" class="results"></section>
+    </section>
+
+<!--Right photo-->
+    <figure class="grid-photo">
+        <img src="/assets/images/rest2.jpg" alt="Plates on a table">
+    </figure>
+</main>
+
+
+<!--footer-->
+<footer class="site-footer">
+    <div>
+        <a href="/">Home</a> |
+        <a href="/fitscore.html">Fitscore</a> |
+        <a href="/explore.html">Explore</a> |
+    </div>
+
+    <div>
+        <a href="/contact.html">Contact Us</a> |
+        <a href="/sitemap.html">Site Map</a> |
+    </div>
+
+    <div class="address-col">
+        <span class="label">Address</span>
+        <span class="addr-line">: 226 Canal St, New York, USA, 100002</span>
+    </div>
+
+    <div class="contact-col">
+        <span class="label">Email :</span>
+        <a class="email" href="mailto:info@bitemetric.com">info@bitemetric.com</a>
+        <span class="label">| Tel :</span>
+        <a class="tel" href="tel:+16477789017">+1-(647)-778-9017</a>
+    </div>
+
+    <div class="copy">© BiteMetric 2025</div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
